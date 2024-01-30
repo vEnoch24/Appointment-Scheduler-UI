@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Mainpage.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#add-data">Add Data</a></li>
+                <li><a href="#edit-data">Edit Data</a></li>
+                <li><a href="#delete-data">Delete Data</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="dashboard">
+                <h1>Dashboard</h1>
+                <p>Welcome to the dashboard.</p>
+            </div>
+            <div id="add-data">
+                <h1>Add Data</h1>
+                <form id="addForm">
+                    <input type="text" id="dataInput" placeholder="Enter data">
+                    <button type="button" id="addButton">Add</button>
+                </form>
+                <ul id="dataList"></ul>
+            </div>
+            <div id="edit-data">
+                <h1>Edit Data</h1>
+                <p>Select an item to edit:</p>
+                <select id="editSelect"></select>
+                <input type="text" id="editInput" placeholder="Edit data">
+                <button type="button" id="editButton">Save</button>
+            </div>
+            <div id="delete-data">
+                <h1>Delete Data</h1>
+                <p>Select an item to delete:</p>
+                <select id="deleteSelect"></select>
+                <button type="button" id="deleteButton">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script src="Mainpage.js"></script>
+</body>
+</html>

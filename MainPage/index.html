@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Zaptime</title>
+</head>
+
+<body>
+
+    <!-- <div class="tutorial-container">
+        <div class="tutorial-step" id="step1">
+            <h2>Welcome to Our Website!</h2>
+            <p>This is your first time logging in. Let's get started.</p>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <div class="tutorial-step" id="step2">
+            <h2>Step 1: Complete Your Profile</h2>
+            <p>Click on the profile icon in the top-right corner and complete your profile information.</p>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <div class="tutorial-step" id="step3">
+            <h2>Step 2: Explore Features</h2>
+            <p>Explore the various features available on our website. Don't hesitate to reach out if you have any
+                questions.</p>
+            <button onclick="finishTutorial()">Finish</button>
+        </div>
+    </div> -->
+
+
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <h1>Zaptime</h1>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="scheduleTitle">
+                    <h2>Schedule</h2>
+                </div>
+                <div class=" rescheduleTitle hide">
+                    <h2>Reschedule</h2>
+                </div>
+                <div class="schedule-sidebar">
+                    <div class="input-box">
+                        <label for="">Title</label>
+                        <input type="text" id="title" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Start Time</label>
+                        <input type="datetime-local" id="start-time" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">End Time</label>
+                        <input type="datetime-local" id="end-time" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Number Of Attendee</label>
+                        <input type="number" id="attendee">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Loaction</label>
+                        <input type="text" id="location">
+                    </div>
+
+                    <div class="button-container">
+                        <button class="schedule" id="submit">Schedule</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="save" id="save">Save</button>
+                    </div>
+
+                </div>
+
+
+                <a href="http://127.0.0.1:5500/login2.html" class="logout">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h1>Logout</h1>
+                </a>
+            </div>
+        </aside>
+
+        <main>
+            <h1>Appointments</h1>
+
+            <div class="appointments">
+                <!-- <div class="app-title">
+                    <div class="status">
+                        <div class="info">
+                            <h1>Title</h1>
+                            <h3><span id="att-time" style="color: #32cf93">05/06/23 12:pm </span>to <span
+                                    style="color: #32cf93"> 12:am</span>
+                            </h3>
+                            <h3><span id=" att-number" style="color: #007bff">5</span> attendees</h3>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <button class="edit-btn"><span class="material-icons-sharp">
+                                edit
+                            </span></button>
+
+                        <button class="delete-btn"><span class="material-icons-sharp">
+                                delete
+                            </span></button>
+                    </div>
+                </div> -->
+
+            </div>
+        </main>
+        <!-- End of MainSection -->
+
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <!-- <div class="info">
+                        <p>Hey <b>OGUNRINDE</b></p>
+                    </div> -->
+                </div>
+            </div>
+            <!-- End of nav -->
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Notifications</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+
+                <div class="notification-container">
+                    <!-- <div class="notification">
+                        <div class="icon">
+                            <span class="material-icons-sharp">
+                                notifications_active
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h2>Workshop</h2>
+                                <h3 id="text_muted_started">
+                                    Started
+                                </h3>
+                                <h3 id="text_muted_ended">
+                                    Ended
+                                </h3>
+                            </div>
+                            <span class="material-icons-sharp">
+
+                            </span>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="notification deactive">
+                        <div class="icon">
+                            <span class="material-icons-sharp">
+                                edit
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>Workshop</h3>
+                                <h3 class="text_muted">
+                                    08:00 AM - 12:00 PM
+                                </h3>
+                            </div>
+                            <span class="material-icons-sharp">
+                                more_vert
+                            </span>
+                        </div>
+                    </div> -->
+                </div>
+
+
+
+                <!-- <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">
+                            add
+                        </span>
+                        <h3>Add Remainder</h3>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@8.5.1"></script>
+
+</body>
+
+</html>

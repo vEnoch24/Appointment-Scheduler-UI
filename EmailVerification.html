@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+</head>
+<body>
+    <style>
+            body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            display: flex; /* Use flexbox to center vertically and horizontally */
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the body fill the entire viewport height */
+        }
+
+        /* Style for the main content container */
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for headings */
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        /* Style for paragraphs */
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Style for the confirmation message */
+        #confirmationMessage {
+            background-color: #5cb85c;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        /* Style for the error message */
+        #errorContainer {
+            background-color: #d9534f;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+    <div id="confirmationMessage" style="display: none;">
+        <h1>Email Verified</h1>
+        <p>Your email address has been successfully verified.</p>
+        <p>Please, proceed to <a href="http://127.0.0.1:5500/login.html">Login</a></P>
+    </div>
+
+    <div id="errorContainer" style="display: none;">
+        <h1>Email Verification Error</h1>
+        <p>There was an error verifying your email. Please contact support.</p>
+    </div>
+    <div id="errorContainer2" style="display: none;">
+        <h1>Email Verification Error</h1>
+        <p>Email Is Already Verified</p>
+    </div>
+
+    <script>
+        // Function to display the confirmation message
+        function showConfirmationMessage() {
+            document.getElementById("confirmationMessage").style.display = "block";
+        }
+
+        // Function to display the error message
+        function showError() {
+            document.getElementById("errorContainer").style.display = "block";
+        }
+        function showExistError() {
+            document.getElementById("errorContainer2").style.display = "block";
+        }
+
+        // Extract userId and token from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+        const token = urlParams.get('token');
+
+        // Make a request to your API to verify the email
+        fetch(`https://localhost:44318/api/Auth/Verify?token=${token}`)
+            .then(response => {
+                if (response.ok) {
+                    // Email verification was successful
+                    showConfirmationMessage();
+                }else if(response.status === 400)
+                {
+                    showExistError();
+                } else {
+                    showError();
+                }
+            })
+            .catch(error => {
+                // Handle network or other errors
+                console.error(error);
+                showError();
+            });
+    </script>
+</body>
+</html>
